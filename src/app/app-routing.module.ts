@@ -7,7 +7,6 @@ import { EquipmentsComponent } from './components/equipments/equipments.componen
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { UpdateequipmentComponent } from './components/updateequipment/updateequipment.component';
-import { UpdateequipmentcategoryComponent } from './components/updateequipmentcategory/updateequipmentcategory.component';
 import { UpdateequipmentgroupComponent } from './components/updateequipmentgroup/updateequipmentgroup.component';
 import { UpdateuserComponent } from './components/updateuser/updateuser.component';
 import { UserComponent } from './components/user/user.component';
@@ -25,13 +24,10 @@ const routes: Routes = [
   component: UserComponent
  },
  {path:'updateuser',
-  component: UpdateuserComponent
+  component: UpdateuserComponent,
  },
  {path:'equipmentcategory',
   component: EquipmentCategoryComponent
- },
- {path:'updateequipmentcategory',
-  component: UpdateequipmentcategoryComponent
  },
  {path:'equipmentgroup',
   component: EquipmentGroupComponent
@@ -48,7 +44,8 @@ const routes: Routes = [
   component: DeleteequipmentComponent
  },
  {path:'updateequipment',
-  component: UpdateequipmentComponent
+  component: UpdateequipmentComponent,
+  canActivate:[UserguardGuard]
  },
  {
   path:'**',
